@@ -16,7 +16,7 @@
         <!-- fav icon -->
         <link rel="shortcut icon" href="css/images/HTML5.ico" />
     </head>
-    <body>
+    <body data-ng-app="portfolioApp">
         <div class="max-height full-width main-bg bg-gray"></div>
 
         <header class="navbar-fixed-top bg-white">
@@ -98,8 +98,10 @@
                                     </ul>
                                 </div><!-- table content holder END-->
                             </div><!-- table content END-->
+
+                            <div data-portfolio-table-directive="" data-ng-controller="portfolioOverviewController"></div>
                         </div><!-- widget sub headers END -->
-                    </div><!-- col xs 8 -->
+                    </div><!-- col xs 12 -->
                 </div><!-- widget-holder -->
             </div>
         </div>
@@ -135,9 +137,19 @@
         <!-- Lib files -->
         <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 
         <!-- Custom scripts -->
         <script type="text/javascript" src="js/data.js"></script>
         <script type="text/javascript" src="js/widgetObserver.js"></script>
+
+        <!-- Angular scripts -->
+        <!-- Modules -->
+        <script type="text/javascript" src="js/angular/modules/portfolioApp.js"></script>
+        <!-- Controllers -->
+        <script type="text/javascript" src="js/angular/controllers/portfolioOverviewController.js"></script>
+        <!-- Directives -->
+        <script type="text/javascript" src="js/angular/directives/portfolioTableDirective.js"></script>
+
     </body>
 </html>
