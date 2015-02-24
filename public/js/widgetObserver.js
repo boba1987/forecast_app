@@ -8,12 +8,12 @@ CLX.AddToList = function(addTo, addFrom){
 	clx = new CLX();
 	stockCounter = 0;
 
+	//append loader on function call
+	addPreloader('../css/images/loader.gif');
+
 	//get tweets
 	self.getObserver = function(stock, amount){
 		var stockNameParsed = stock.toLowerCase().split(' ').join('_'), action;
-
-		//append loader on function call
-		addPreloader('../css/images/loader.gif');
 
 		//count stocks
 		stockCounter++;
@@ -177,11 +177,7 @@ CLX.AddToList = function(addTo, addFrom){
 var stockList = CLX.AddToList('stock-table-holder');
 
 //adding tweets to observe
-// addTo.getObserver('IBM', 25000);
-// addTo.getObserver('Societe Generale', 10000);
-// addTo.getObserver('General Electrics', 1000);
-// addTo.getObserver('Microsoft', 30000);
-// addTo.getObserver('Google', 5000);
+stockList.getObserver('IBM', 25000);
 
 stockList.connectTo('tradeWidget');
 

@@ -221,7 +221,7 @@ pip-log.txt
 node_modules/
 
 #############
-## Generated files
+## Bower files
 #############
 
-public/css/
+public/bower_components

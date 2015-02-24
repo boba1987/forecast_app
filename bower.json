@@ -1,0 +1,9 @@
+{
+  "name": "forecast_app",
+  "version": "1.0.0",
+  "dependencies": {
+    "angular" : "^1.3",
+    "bootstrap" : "^3.1",
+    "jquery" : "^2"
+  }
+}
