@@ -2208,7 +2208,7 @@ h3{
   margin-left: 10px;
 }
 
-.preloader{
+.preloader, .loader{
   width: 50px;
   padding: 5px;
   display: block;
@@ -2284,4 +2284,10 @@ h3{
   height:140px;
   padding: 20px; 
   padding-top: 0;
+}
+
+.no-data{
+  font-weight: bold;
+  text-align: center;
+  line-height: 50px;
 }

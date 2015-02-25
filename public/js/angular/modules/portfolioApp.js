@@ -1,1 +1,1 @@
-var portfolioApp = angular.module('portfolioApp', []);
+var portfolioApp = angular.module('portfolioApp', ['ngResource']);

@@ -74,6 +74,27 @@
                                 <div></div>
                             </div>
 
+                            <div class="padding-20">
+                                <h3>Add stock</h3>
+                                <form id="addStockForm" action="" class="widget-holder padding-20">
+                                    <span>Select stock to track: </span><span id="trade-type"></span>  <span id="trade-stock"></span><br>
+                                    <div class="input-group col-md-5">
+                                        <select name="" id="stockSelectList" class="form-control">
+                                            <option selected="selected">--</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="border-gray padding-0-20">
+                                <div></div>
+                            </div>
+
                             <!-- table content -->
                             <div class="table-holder padding-20">
                                 <!-- table header -->
@@ -138,14 +159,18 @@
         <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-resource/angular-resource.min.js"></script>
 
         <!-- Custom scripts -->
+        <script type="text/javascript" src="js/configuration.js"></script>
         <script type="text/javascript" src="js/data.js"></script>
         <script type="text/javascript" src="js/widgetObserver.js"></script>
 
         <!-- Angular scripts -->
         <!-- Modules -->
         <script type="text/javascript" src="js/angular/modules/portfolioApp.js"></script>
+        <!-- Services -->
+        <script type="text/javascript" src="js/angular/services/dataRequestService.js"></script>
         <!-- Controllers -->
         <script type="text/javascript" src="js/angular/controllers/portfolioOverviewController.js"></script>
         <!-- Directives -->
