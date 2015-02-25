@@ -6,6 +6,7 @@ portfolioApp.factory('twitterService', ['$q', '$timeout', '$http', function($q, 
 
 		return $http.get(
 			url, {
+				/** Transform data before sending to controller */
 				transformResponse: function(data){
 					return angular.fromJson(data, false);
 				}
