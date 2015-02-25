@@ -1,5 +1,6 @@
 portfolioApp.controller('portfolioOverviewController', ['$scope', '$timeout', 'twitterService',function($scope, $timeout, twitterService){
-	twitterService.getTwitterData('IBM').success(function (data) {
+	/** Getting twitter data */
+  twitterService.getTwitterData('IBM').success(function (data) {
         console.log(data);
     }).error( function () {
         console.log('FAILURE');
