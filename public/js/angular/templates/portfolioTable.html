@@ -13,7 +13,7 @@
     <!-- table content holder -->
     <div class="table-content-holder">
         <div id="stock-table-holder" class="stock-table-holder">
-            <ul id="stock_IBM" class="table-content clearfix undefined">
+            <ul id="stock_IBM" class="table-content clearfix undefined" data-ng-repeat="stock in portfolio">
                 <li class="width-15 capital-text">  </li>
                 <li class="amount width-7 text-center">  </li>
                 <li class="text-right width-12">  </li>
@@ -26,6 +26,8 @@
                     <input data-trade="stop" type="button" data-stock="IBM" value="Tweets" class="btn btn-primary getTweets" data-toggle="modal" data-target=".bs-example-modal-lg.twet-modal"> 
                 </li>
             </ul>
+            <p class="no-data" data-ng-if="noData">No data to show!</p>
+            <img id="loader" class="loader" data-ng-if="loading" src="css/images/loader.gif">
         </div><!-- stock overview table -->
         
         <ul class="table-footer text-right clearfix font-light">
