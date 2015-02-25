@@ -178,6 +178,8 @@ var stockList = CLX.AddToList('stock-table-holder');
 
 //adding tweets to observe
 stockList.getObserver('IBM', 25000);
+stockList.getObserver('MICROSOFT', 25000);
+stockList.getObserver('DOW JONES', 25000);
 
 stockList.connectTo('tradeWidget');
 
