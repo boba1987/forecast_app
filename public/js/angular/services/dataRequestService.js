@@ -4,14 +4,18 @@ portfolioApp.factory('twitterService', ['$q', '$timeout', '$http', function($q, 
 	function getTwitterData(hashtag){
 		var url = "http:/tweets/" + hashtag;
 
-		return $http.get(
+		var getCollection = $http.get(
 			url, {
 				/** Transform data before sending to controller */
 				transformResponse: function(data){
 					return angular.fromJson(data, false);
 				}
 			}
-		)
+		);
+
+		return{
+			getCollection: getCollection
+		}
 	};
 	/** Parse each sting */
 	function scanData(string){

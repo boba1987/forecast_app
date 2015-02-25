@@ -8,9 +8,9 @@ portfolioApp.controller('portfolioOverviewController', ['$scope', '$timeout', 't
     $scope.portfolio = null;
     /** Getting twitter data */
     $scope.getTwitterData = function(stock){
-      twitterService.getTwitterData(stock).success(function (data) {
+      twitterService.getTwitterData(stock).getCollection.success(function (data) {
         descriptorObj = {};
-        descriptorObj.name = stock;
+        descriptorObj.name = stock.toLowerCase();
         descriptorObj.data = data;
         dataArr.push(descriptorObj);
         $scope.portfolio = dataArr;
