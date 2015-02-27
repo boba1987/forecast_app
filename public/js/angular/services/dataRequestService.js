@@ -2,19 +2,34 @@ portfolioApp.factory('twitterService', ['$q', '$timeout', '$http', function($q, 
 	var deferred = $q.defer();
 	/** Get tweets service */
 	function getTwitterData(hashtag){
-		var url = "http:/tweets/" + hashtag;
-
-		var getCollection = $http.get(
-			url, {
-				/** Transform data before sending to controller */
-				transformResponse: function(data){
-					return angular.fromJson(data, false);
+		var url = "http:/tweets/" + hashtag,
+			/** Get all tweets */
+			getCollection = $http.get(
+				url, {
+					/** Transform data before sending to controller */
+					transformResponse: function(data){
+						return angular.fromJson(data, false);
+					}
 				}
-			}
-		);
+			),
+			/** Get procesed tweets */
+			getProcessedData = function(collection){
+				var result = 0;
+
+				for(var i=0;i<collection.length;i++){
+					if(scanData(collection[i].text)>50){
+						result +=10;
+					}else if(scanData(collection[i].text)<50){
+						result -=10;
+					}
+				}
+
+				return result;
+			};
 
 		return{
-			getCollection: getCollection
+			getCollection: getCollection,
+			getProcessedData: getProcessedData
 		}
 	};
 	/** Parse each sting */
@@ -54,13 +69,9 @@ portfolioApp.factory('twitterService', ['$q', '$timeout', '$http', function($q, 
 
 		return result;
 	}
-	/** Parse tweets */
-	function scanTweetData(hashtags){
-		return;
-	}
 
 	return{
 		getTwitterData: getTwitterData,
 		scanData: scanData
 	}
-}])
+}]);

@@ -9,9 +9,21 @@ portfolioApp.controller('portfolioOverviewController', ['$scope', '$timeout', 't
     /** Getting twitter data */
     $scope.getTwitterData = function(stock){
       twitterService.getTwitterData(stock).getCollection.success(function (data) {
-        descriptorObj = {};
-        descriptorObj.name = stock.toLowerCase();
-        descriptorObj.data = data;
+      	/** Process tweets */
+        var result = twitterService.getTwitterData().getProcessedData(data.statuses) + 50;
+
+        if(result<0){
+        	result=0;
+        }else if(result>100){
+        	/** Bar has to be at least 5% wide */
+        	result=95;
+        }
+
+        descriptorObj = {
+        	name: stock.toLowerCase(),
+        	data: data,
+        	twitterResult: result
+        };
         dataArr.push(descriptorObj);
         $scope.portfolio = dataArr;
 
